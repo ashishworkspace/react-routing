@@ -14,6 +14,9 @@ const App = () => {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact />} />
+          
+          {/* Page not found */}
+          <Route path="*" element={<h1>Page not found 404 error</h1>} />
         </Routes>
       </BrowserRouter>
     </>
