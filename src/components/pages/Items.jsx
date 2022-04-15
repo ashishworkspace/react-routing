@@ -8,6 +8,7 @@ const Items = () => {
   return (
     <>
       <div>Items = {category}</div>
+      <h1>Price:</h1>
       <div>QueryString = {searchParams.get('price')}</div>
     </>
   );

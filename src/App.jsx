@@ -1,13 +1,16 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import About from "./components/pages/About";
 import Contact from "./components/pages/Contact";
+import DashBoard from "./components/pages/DashBoard";
 import Home from "./components/pages/Home";
 import Items from "./components/pages/Items";
 import ItemsID from "./components/pages/ItemsID";
+import Login from "./components/pages/Login";
 
 const App = () => {
+  let isLogged = false;
   return (
     <>
       <BrowserRouter>
@@ -18,6 +21,8 @@ const App = () => {
           <Route path="/contact" element={<Contact />} />
           <Route path="/items/:category" element={<Items />} />
           <Route path="/items/:category/:id" element={<ItemsID />} />
+          <Route path="/dashboard" element={isLogged ? <DashBoard />: <Navigate to="/login" replace/>} />
+          <Route path="/login" element={<Login />} />
           {/* Page not found */}
           <Route path="*" element={<h1>Page not found 404 error</h1>} />
         </Routes>
