@@ -31,6 +31,26 @@ const Navbar = () => {
       <li>
         <NavLink to="/contact">Contact</NavLink>
       </li>
+      <li>
+        <NavLink
+          style={({ isActive }) => {
+            return { background: isActive ? "pink" : "" };
+          }}
+          to="/items/mobile"
+        >
+          Items
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          style={({ isActive }) => {
+            return { background: isActive ? "pink" : "" };
+          }}
+          to="/items/mobile/1"
+        >
+          ItemsID
+        </NavLink>
+      </li>
     </ul>
   );
 };
