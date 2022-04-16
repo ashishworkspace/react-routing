@@ -1,4 +1,4 @@
-import { render } from "react-dom";
-import App from './App';
+import { createRoot } from "react-dom/client";
+import App from "./App";
 
-render(<App />, document.querySelector(".root"));
+createRoot(document.querySelector(".root")).render(<App />);
